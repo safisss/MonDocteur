@@ -1,0 +1,225 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+	
+ 
+}
+
+
+
+
+
+/* body{
+
+    background: #fff;
+  background-color: #efefef; 
+}  */
+
+
+
+/* .top-bar {
+
+    width: 430px;
+    margin-top: 31px;
+	margin-left: 320px;
+
+	
+} */
+
+
+
+
+
+
+
+.Main {
+    display: flex; 
+	/* width: calc(110% - 300px); */
+	/* left: 100px; */
+	/* min-height: 100vg; */
+/* background: var(--white); */
+	/* transition: 0.5s; */
+	background-color: #287bff;
+	border-bottom:2px solid rgb(255, 255, 255); 
+
+	
+}
+
+
+/* .selectBox     {
+	height: 65px;
+	padding: 25px;
+    border-radius: 7px;
+	background: #287bff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	cursor: pointer;
+	color: #fff;
+     position: relative;
+    
+} */
+
+
+.contentAll {
+max-width: 1000px;
+margin:0 auto;
+	
+
+}
+
+
+
+
+
+
+.selectBoxx {
+
+position: relative;
+/* padding-top:1px; */
+left:7%;
+
+}
+
+
+
+
+
+.selectBoxx select{ 
+width: 250px;
+height: 42px;
+padding:10px 15px;
+line-height: 18px;
+font-size: 16px;
+width: 100%;
+-webkit-appearance: none;
+appearance: none;
+border-radius: 17px;
+border: 1px solid #ccc;
+/* border: 2px solid red; */
+
+}
+
+.selectBox:after{
+content: "";
+position: absolute;
+right:8px;
+top:50%;
+margin-top:-4px;
+margin-top:8px solid rgb(36, 132, 216);
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+}
+
+
+.selectBox:hover{
+color:rgb(36, 132, 216);
+
+}
+
+
+
+.selectBox select:focus{
+border:2px solid rgb(35, 112, 228);
+
+}
+
+
+
+/* bar search by name */
+
+
+.searchbySpecialitiess {
+	
+display: inline;
+height: 100px;
+width: 340px;
+/* margin: 0 200px; */
+color: #fff;
+}
+
+
+.searchbySpecialitiess label input {
+	height: 40px;
+	width: 250px;
+	margin-left: 80px;
+	border-radius: 17px;
+	padding-left: 50px;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid var(--black2);
+	margin-top: 31px;
+	/* margin-left: 105px; */
+	background-color: #fff;
+	
+	
+}
+
+
+.searchbynamee {
+	
+display: inline;
+height: 100px;
+width: 345px;
+margin-left: 50px;
+color: #fff;
+
+
+/* width: calc(100% - 300px); */
+/* transition: 0.5s; */
+/* min-height: 100vg; */
+/* background: var(--white); */
+/* left: 400px; */
+}
+
+
+
+.searchbynamee label {
+	
+width: 100%;
+
+}
+
+
+
+.searchbynameee label input {
+	height: 40px;
+	width: 100%;
+	border-radius: 17px;
+	/* padding: 5px 20px; */
+	padding-left: 70px;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid var(--black2);
+	margin-top: 31px;
+	/* margin-left: 105px; */
+	background-color: #fff;
+	color:#ffae00;
+	
+}
+
+
+
+
+/* .searchbyname label ion-icon {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	font-size: 1.2em;
+	color: red;
+} */
+
+
+
+.rating {
+padding-left: 150px;
+padding-top:30px;
+
+margin: 3px;
+}
+
+
+
+

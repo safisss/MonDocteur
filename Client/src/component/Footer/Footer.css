@@ -1,0 +1,35 @@
+.footer {
+  text-align: center;
+  padding: 10px 0;
+
+  /* background-color: #fff; */
+}
+
+.footer p {
+  /* color: #888; */
+  color: #1475d0;
+  font-weight: bolder;
+}
+
+/* 
+.countriesList {
+  
+ 
+  margin: 2rem;
+  display: flex;
+
+  text-decoration: none;
+  list-style: none;
+   color: #888;
+}
+
+.countries{
+         
+border: 2px solid red;
+  margin: 2rem;
+  display: flex;
+
+  text-decoration: none;
+  list-style: none;
+   color: #888;
+} */

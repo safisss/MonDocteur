@@ -1,0 +1,31 @@
+.ImTest1{
+  /* position: relative; */
+
+  height: 750px;
+  width: 100%;
+  padding-left: 300px;
+  margin-bottom: 0px;
+}
+
+.WriteText {
+  color: rgb(20, 81, 146);
+  position: absolute;
+
+  font-size: 50px;
+  left: 335px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  top: 170px;
+  display: flex;
+}
+
+/* .Welcome {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin:0;
+    padding: 0;
+    display:flex;
+
+} */

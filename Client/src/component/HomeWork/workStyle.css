@@ -1,0 +1,125 @@
+.work {
+  height: auto;
+  padding: 50px 0;
+  overflow: hidden;
+  background: #fff;
+
+ 
+}
+
+.WorkTitle {
+  font-size: 40px;
+  color:   #1475d0;
+  padding-left: 500px;
+  font-family: 'Playfair Display';
+/* -webkit-text-stroke: "5px #ffcc00"; */
+    font-weight: 900;
+  
+}
+
+ span {
+     /* font-size: 40px; */
+  font-weight: 900;
+   font-family: Rubik,sans-serif;
+       color: #1475d0;
+       /* border: 1px solid red; */
+     
+}
+
+.work .part {
+  margin-top: 38px;
+  width: 20%;
+   height: 340px;
+  /* float: left; */
+  /* height: auto; */
+  padding: 55px 50px;
+  border: 1px solid #888;
+  box-sizing: border-box;
+  text-align: center;
+ z-index: 10;
+ color:white;
+ margin-bottom: 56px;
+     transition: all 200ms ease;
+         box-shadow: 0 15px 49px rgb(0 0 0 / 59%);
+         background: #2183de;
+   border: 2px solid rgb(253, 253, 253);
+    margin-left: 5%;
+    border-radius: 15px;
+    transition: 1s;
+      float: left;
+
+}
+
+.work .part:hover {
+  border: 1px solid #fff;
+  background: #ffcc00;
+  /* box-shadow: 0 15px 49px rgb(0 0 0 / 59%); */
+  transform: scale(1.3);
+/* background: #ffffff; */
+box-shadow: 2px 2px 2px #000;
+z-index: 2;
+}
+#iconBoxes{
+  color:rgb(230, 201, 13);
+}
+.work .first {
+  margin-left: 250px;
+ 
+}
+
+.work .part .icon {
+  /* color: #888; */
+  margin-bottom: 20px;
+}
+
+.work .part .icon:hover {
+  color: #1475d0;
+}
+.work .part .part-title {
+  font-size: 25px;
+  color: #1475d0;
+  margin-bottom: 20px;
+}
+
+.work .part .part-title:hover {
+  color: #1475d0;
+}
+
+.work .part .line {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.line:hover {
+  color: #1475d0;
+}
+
+.work .part .PartDescrip {
+  font-size: 14px;
+  color: #fff;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.work .part .PartDescrip:hover {
+  color: #e8eef3;
+}
+
+@media (max-width: 575px) {
+  .work .part {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .work .part {
+    width: 47%;
+  }
+
+  .work .last {
+    margin-left: 0;
+  }
+}

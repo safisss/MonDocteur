@@ -1,0 +1,97 @@
+/* 
+body {
+  padding: 0;
+  margin: 0;
+ 
+} */
+
+
+/* span {
+  content: "\2190";
+  font-size: 50px;
+  color: #3d9bf9;
+} */
+
+
+.fieldsetformRegistration {
+  margin-top: 135px;
+  margin-left: 27%;
+  width: 48%;
+  background-color: #3d9bf9;
+  box-shadow: 5px 20px 20px 1px 10px rgb(85, 85, 85);
+  border: 1px;
+  padding-left: 100px;
+  /* padding-right: 30px; */
+  padding-top: 10px;
+  border-radius: 10px 10px 10px 10px;
+  color: white;
+  height: 610px;
+  line-height: 2;
+  font-weight: bolder;
+  
+}
+
+
+
+.RegistrationUserTd{
+  letter-spacing: 1px;
+}
+
+.TitleUser {
+  font-family: andalus;
+  letter-spacing: 3px;
+  text-align: center;
+  color: white;
+  margin: 2px;
+  width: 80%;
+}
+
+.LineHr {
+  border: 5px solid white;
+  border-radius: 10px;
+  width: 29%;
+  margin-left: 140px;
+  margin-top: 3px;
+  margin-bottom: 25px;;
+  /* padding-top: 3px; */
+}
+
+/* ul li {
+  margin-left: 20px;
+  color: white;
+} */
+
+#submitUserRegister {
+  margin-top: 65px;
+  margin-left: 100px;
+height:60px;
+
+  color: #318ce7;
+  background-color: white;
+  width: 65%;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+#submitUserRegister:hover {
+  color: white;
+  background-color: #318ce7;
+  font-weight: bold;
+}
+
+.inputsUsersRegistration {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid white;
+  color: rgb(0, 0, 0);
+  width: 135%;
+}
+
+/* #radio {
+    display:block; 
+    width:150px;
+} */

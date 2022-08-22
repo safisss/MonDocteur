@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contactbox {
+  width: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgb(161, 159, 159);
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+background-color: rgb(245, 241, 241);
+}
+
+.formDr {
+  margin: 35px;
+}
+
+.inputsDr {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  padding-right: 20px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  
+  outline: none;
+  padding-left: 20px;
+  margin-left: 15px;
+ 
+}
+
+
+/* input {
+  color:rgb(0, 0, 0);
+  background-color: rgb(188, 196, 213);
+} */
+
+.textareaMsg {
+  height: 150px;
+  padding-top: 10px;
+  
+}
+
+.btnDr {
+  border-radius: 15px;
+  color: #fff;
+  margin-top: 18px;
+
+  width: 160px;
+  height: 45px;
+ margin-left: 15px;
+  background-color: #235bc4;
+  border: 2px solid #235bc4;
+}
+
+
+.btnDr:hover {
+    background-color: #fff;
+    color: #235bc4;
+    font-weight: bolder;
+}

@@ -1,0 +1,96 @@
+.cardsAdmins{
+    display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(255, 255, 255);
+margin-left: 320px;
+}
+
+.fwRow{
+position: relative;
+width: 900px;
+display: flex;
+justify-content: center;
+align-items: center;
+/* flex-wrap: wrap; */
+padding: 30px;
+ box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+/* border: 2px solid red; */
+}
+
+
+.fwRow .shColumn {
+
+    position: relative;
+   max-width: 300px;
+   height: 200px;
+   background: #dce5ff;
+   margin: 30px 10px;
+   padding: 20px 15px;
+   display: flex;
+   flex-direction: column;
+    transition: 0.4s ease-in-out;
+box-shadow: 3 50px 20px rgba(0,0,0,0.10);
+border-radius: 10px;
+
+    /* --webkit-backface-visibility: hidden;
+padding: 0px 30px 0px 30px;
+    background-position: center center; */
+   
+}
+
+
+.fwRow .shColumn:hover {
+height: 300px;
+
+
+
+}
+
+.fwRow .shColumn .shColumnWrapper {
+
+left:10px;
+top:-60px;
+   width:300px;
+   height:200px;
+    position: relative;
+    z-index: 1;
+    /* transition: all 0.3s ease-in-out; */
+    box-shadow: 3 50px 20px rgba(0,0,0,0.5);
+   
+
+}
+
+.fwRow .shColumn .shColumnWrapper .imTeamApp {
+max-width: 100%;
+height: 100%;
+border-radius : 6px;
+border-radius: 10px;
+}
+
+
+
+.fwRow .shColumn .teamOverlay{
+ 
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  font-family: monospace;
+  visibility: hidden;
+    opacity: 0;
+    color: black;
+ transition: 0.4s ease-in-out;
+
+}
+
+.fwRow .shColumn:hover .teamOverlay {
+
+ visibility: visible;
+    opacity: 1;
+ margin-top: -50px;
+ /* border: 2px solid red; */
+}
+
+
+

@@ -1,0 +1,49 @@
+
+.Loggcontainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 50px 50px -50px darkslategray;
+}
+.MyformLogg{
+  width: 270px;
+  margin-right: 30px;
+}
+
+.MyformLogg .AdmLogg{
+  color: rgb(76, 132, 220);
+  margin-bottom: 20px;
+}
+
+.MyformLogg .InLogg{
+  border: none;
+  outline: none;
+  border-radius: 0;
+  width: 100%;
+  border-bottom: 2px solid rgb(76, 132, 220);
+  margin-bottom: 25px;
+  padding: 7px 0;
+  font-size: 14px;
+}
+.MyformLogg .buttonLogg{
+  color: white;
+  background-color: rgb(76, 132, 220);
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 5px 12px;
+  font-weight: 500;
+}
+.imagii .iii{
+  width: 800px;
+  padding-left: 50px;
+}

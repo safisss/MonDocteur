@@ -1,0 +1,125 @@
+
+
+.drop {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+    
+}
+
+.drop .drop-title {
+    margin-top: 70px;
+    font-size: 32px;
+    margin-bottom: 30px;
+   /* border: 2px solid red; */
+}
+
+
+
+.drop .drop-title  {
+    font-weight: normal;
+
+}
+
+.drop .messageContact {
+    width: 60%;
+    margin: auto;
+    
+}
+
+.drop .messageContact .inputsContact{
+    box-sizing: border-box;
+    outline: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    
+    /* font-weight: bolder; */
+
+}
+
+
+.drop .messageContact .FormInput {
+    overflow: hidden;
+
+}
+
+
+.drop .messageContact .FormInput .inputsContact  {
+
+    width: 48%;
+    height: 45px;
+    border: 1px solid black;
+     /* border: 1px solid rgb(87, 10, 10); */
+    line-height: 2px;
+    
+   margin-right: 5px;
+  
+}
+
+.drop .messageContact .FormInput .inputsContact [type=text] {
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+
+   
+}
+
+.drop .messageContact .FormInput .inputsContact [type=email] {
+    float: right;
+    border: 1px solid black;
+
+}
+
+.drop .messageContact .inputsContact {
+    width: 97%;
+    border: 1px solid black;
+    height: 45px;
+    
+}
+
+.drop .messageContact #TextareaBox {
+    width: 97%;
+    outline: 0;
+    background: rgb(245, 241, 241);
+    border-radius: 8px;
+    border: 1px solid black;
+    /* font-weight: bolder; */
+    padding: 10px;
+}
+
+.drop .messageContact input[type=submit] {
+
+    width: 97%;
+    height: 50px;
+    background: #fff;
+    border: 2px solid rgb(69, 139, 209);
+    color: rgb(15, 156, 226);
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: bolder;
+    border-radius: 10px;
+    font-size: 17px;
+    
+}
+
+
+.drop .messageContact input[type=submit]:hover {
+    background-color: rgb(53, 138, 207);
+    color: #fff;
+    
+    
+}
+
+@media (max-width:575px) {
+    .drop .drop-title {
+        font-size: 40px;
+    }
+    
+    .drop .messageContact .FormInput .inputsContact {
+        width: 100%;
+    }
+    
+    .drop .messageContact {
+        width: 90%;
+    }
+}

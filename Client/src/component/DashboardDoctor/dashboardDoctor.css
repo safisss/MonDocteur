@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+  /* text-decoration: none; */
+}
+/* box-sizing: border-box; */
+
+
+
+
+
+
+:root {
+  --blue: #287bff;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+
+}
+
+
+.titleDoctor {
+  color: #fff;
+  /* border: 1px solid rgb(221, 6, 6); */
+}
+
+
+
+.NavigationDoctor .titleDoctorEspace i{
+color: #fff;
+
+   /* border: 1px solid rgb(221, 6, 6);  */
+}
+
+
+/* .ContainerDoctor {
+  min-height: 100vh;
+  overflow-x: hidden;
+  border: 1px solid rgb(221, 6, 6); 
+  
+} 
+  */
+
+
+
+
+/* .ContainerDr{
+
+background:("../../images/medecin.jpg");
+border: 1px solid rgb(221, 6, 185);
+width: 70%;
+} */
+
+
+
+.ContainerDoctor {
+  /* position: relative; */
+  width: 90%; 
+  /* height: 100%; */
+  /* background:url("../../images/Biologo.jpg"); */
+  /* border: 5px solid rgb(157, 221, 6); */
+} 
+
+
+
+
+.NavigationDoctor {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  /* border-left: 10px solid yellow; */
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+
+
+.NavigationDoctor ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
+
+.NavigationDoctor ul li {
+  position: relative;
+  width: 200%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+
+ 
+
+a {
+  text-decoration: none;  
+  color: white;
+  font-weight: bolder;
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  padding-top: 5px;
+  
+}
+
+
+
+
+.NavigationDoctor ul li:hover {
+  background: var(--white);
+   width:271px;
+}
+
+
+
+
+
+.NavigationDoctor ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+
+
+
+.NavigationDoctor ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+  line-height: 50px;
+}
+
+
+
+
+.NavigationDoctor ul li a {
+color:#fff;
+line-height: 50px;
+}
+
+
+
+
+.NavigationDoctor ul li:hover {
+  color: var(--blue);
+}
+
+
+
+.NavigationDoctor ul li i {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.75em;
+  color:rgb(255, 255, 255);
+}
+
+
+
+.NavigationDoctor ul li:hover a{
+  color: #287bff;
+  
+}
+
+
+
+
+
+.NavigationDoctor ul li:hover i{
+  color: #287bff;
+  cursor:pointer;
+}
+
+
+
+
+.NavigationDoctor ul li .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+
+
+
+/*Curve outsides*/
+
+/* .Navigation ul li:hover {
+
+	content: '';
+	position: absolute;
+	right: 0;
+	top: -50px;
+	width: 50px;
+	height: 50px;
+	background: green;	
+	} */
+
+
+
+
+
+.BtnDashDoctor {
+border-radius: 17px;
+margin-top: 280px;
+outline: none;
+z-index:1;
+color: #fff;
+padding:10px;
+font-weight: bolder;
+font-size: 15px;
+border: 3px solid rgb(233, 239, 245);
+/* border-color: #ffffff; */
+background-color: #287bff;
+width: 150px;
+height: 45px;
+margin-left : 45px;
+margin-top : 490px;
+}
+
+
+
+
+.BtnDashDoctor:hover{
+background: #fff;
+cursor:pointer;
+color: #1185c8;
+}
+
+
+
+
+
+

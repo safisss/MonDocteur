@@ -1,0 +1,71 @@
+/* calendrier */
+
+/* * {
+   
+
+   
+
+box-sizing: border-box;
+
+}
+
+
+
+
+
+
+body{
+    
+background: #fff;
+
+}
+
+
+
+
+ /* margin:0;
+    padding: 0; */
+/* .Calendrier2 {
+color: #136aac;
+    
+padding-top:150px;
+margin-left: 150px;
+ 
+
+    	
+}
+
+
+
+
+.Calendrier3
+ {
+color: rgb(88, 86, 86);
+
+margin-top: 10px;
+margin-left: 450px;
+padding-left:30px;
+font-family: roboto;
+ 
+ 
+
+}
+
+
+.mainCalender {
+
+    text-align: center;
+}
+
+.appointment {
+    height : 40px;
+    width: 200px;
+    font-size: 32px;
+} */ 
+
+.demoDoc-app-calendar{
+    /* padding-left: 350px; */
+    /* border: 2px solid red; */
+    float: right;
+    width:1220px;
+}

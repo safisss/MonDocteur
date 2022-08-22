@@ -1,0 +1,220 @@
+/* *{
+
+    background-color: #fff;
+} */
+
+
+.barreDoc {
+background: #444;
+width: 99px;
+height: 5px;
+border-radius:2px;
+margin: 0 auto;
+}
+
+
+
+/* .formulaireDoc{
+    width: 100%;
+    height: 100%;
+    padding-left: 250px;
+    align-items: center;
+    padding-top: 50px;
+    background-color: #fff;
+} */
+
+
+
+.formulaireDoc .formDoc{
+    width: 73%;
+    height: 100%;
+    padding: 50px;
+    border-radius:25px;
+    margin: 0 auto;
+    margin-left: 350px;
+    display: table;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0,2);
+}
+
+
+
+
+.ProDoc {
+text-align: center;
+text-transform: uppercase;
+border-bottom: 1px solid #888;
+text-shadow: 2px 0 0 #1775b8;
+color: #1775b8;
+padding-top: 10px;
+padding-bottom: 10px;
+
+}
+
+
+
+.Labels{
+    font-size: 19px;
+}
+
+
+#dateDoc {
+       color: grey;   
+    font-size: 15px;
+/* height: 40px; */
+background-color: #ededed;
+}
+
+.stars{
+    color: rgb(16, 13, 159);
+    font-size: 20px;
+    margin-left:3px;
+    font-weight: bold;
+
+}
+
+
+
+.formulaireDoc .form1Doc, .formulaireDoc .form2Doc {
+width: 40%;
+display: inline-block;
+margin-left: 50px;
+margin-right: 50px;
+margin-top: 37px;
+}
+
+
+.gender{
+     background-color: #ededed;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    /* color: #41a2e7; */
+    /* font-weight: bolder; */
+    padding: 10px;
+    border-color: rgb(175, 172, 172);
+    font-size: 15px;
+    
+}
+
+
+.gender option {
+    background-color: #e6e7e7;
+}
+
+
+.inputDoc {
+       width: 100%; 
+    /* height: 40px; */ 
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid rgb(175, 172, 172);
+    background-color: #ededed;
+    padding: 10px;
+    height: 40px;
+}
+
+/* ::placeholder{
+    color:#fff
+} */
+
+
+.inputDoc option {
+     background-color:white;
+    color: #41a2e7;
+    font-weight: bolder;
+    line-height: 2px;
+    padding-left: 10px;
+}
+
+
+/* .inputDoc:hover{
+    border: 2px solid #fff;
+    font-weight: bold;
+} */
+
+
+.buttonDoc input{
+width: 90%;
+padding: 8px;
+background: rgb(149, 143, 143);
+color: #0e5f9a;
+border: 1px solid #0e5f9a;
+font-size: 19px;
+
+transition:  aLL .4s ease-in;
+border-radius: 10px;
+margin-left: 55px;
+display: table;
+cursor: pointer;
+font-weight: bolder;
+
+}
+
+
+
+#specialités, #Ajoutspecialités, #Gouvernorat {
+   color:#41a2e7;
+    /* font-weight: bolder; */
+    height: 40px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 6px;
+}
+    
+
+
+
+.buttonDoc {
+     /* color: grey; */
+    /* font-weight: bolder; */
+    font-size: 15px;
+    width: 95%;
+    padding-left: 35px;
+/* background-color: #ededed; */
+}
+
+
+.buttonDoc input:hover {
+       background: #41a2e7;
+    transition: aLL .4s ease-in;
+   border: 2px solid #41a2e7;
+    color: #ffffff;
+    border: 2px solid #41a2e7;
+    
+}
+
+
+
+.RenseignementsDoc {
+  color: rgb(0, 133, 221);
+  font-family: roboto;
+padding-bottom: 15px;
+font-size: 35px;
+/* border: 1px solid red; */
+
+}
+
+
+.formulaireDoctor{
+
+
+  /* position: absolute; */
+  top: 15%;
+  left: 23%;
+  margin-left: 25%;
+
+  width: 50%;
+  height: 630px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* background-color: #e7e6e6; */
+  background-color: #f0eded;
+	/* text-align:center; */
+	line-height: 1.75;
+    font-family: Poppins, sans-serif;
+
+  /* padding-left: 50%; */
+
+   
+}

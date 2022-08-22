@@ -1,0 +1,218 @@
+.formulaireInsc{
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    align-items: center;
+    /* padding-top: 10px; */
+    background-color: #fff;
+
+}
+
+
+
+.formulaireInsc .formInsc{
+    width: 90%;
+    height: 100%;
+    padding: 1px;
+    border-radius:25px;
+    margin: 0 auto;
+    display: table;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0,2);
+    
+}
+
+
+/* span {
+  content: "\2190";
+  font-size: 50px;
+  color: #3d9bf9;
+} */
+
+
+
+.Inscri {
+text-align: center;
+text-transform: uppercase;
+border-bottom: 1px solid #888;
+text-shadow: 2px 0 0 #1775b8;
+color: #1775b8;
+padding-top: 10px;
+padding-bottom: 10px;
+
+} 
+
+
+
+.LabelsInsc{
+    font-size: 17px;
+  
+
+}
+
+
+
+.star{
+    color: rgb(16, 13, 159);
+    font-size: 20px;
+    margin-left:3px;
+    font-weight: bold;
+    
+
+}
+
+
+
+.formulaireInsc .form1Insc, .formulaireInsc .form2Insc {
+width: 40%;
+display: inline-block;
+margin-left: 50px;
+margin-right: 50px;
+margin-top: 20px;
+
+
+
+}
+
+
+
+
+.Gender{
+    background-color: #ededed;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    /* color: #41a2e7; */
+    /* font-weight: bolder; */
+    padding: 10px;
+    border-color: rgb(175, 172, 172);
+    font-size: 15px;
+    
+}
+
+
+.Gender option {
+    background-color: #e6e7e7;
+   
+    
+}
+
+
+
+
+::placeholder{
+
+  color:grey;
+
+    font-size: 15px;
+
+}
+
+
+
+.buttonInsc input{
+width: 90%;
+padding: 8px;
+background: rgb(149, 143, 143);
+color: #0e5f9a;
+border: 1px solid #0e5f9a;
+font-size: 19px;
+
+transition:  aLL .4s ease-in;
+border-radius: 10px;
+margin-left: 55px;
+display: table;
+cursor: pointer;
+font-weight: bolder;
+
+}
+
+
+.inputInsc {
+     width: 100%; 
+    /* height: 40px; */ 
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid rgb(175, 172, 172);
+    background-color: #ededed;
+    padding: 10px;
+    height: 40px;
+  
+}
+
+
+#specialités1, #specialités2, #gouvernorat {
+    color:#41a2e7;
+    /* font-weight: bolder; */
+    height: 40px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 6px;
+}
+#dateInsc {
+   /* color:#41a2e7; */
+   color: grey;
+    /* font-weight: bolder; */
+    font-size: 15px;
+background-color: #ededed;
+
+
+}
+
+.inputInsc option {
+    background-color:white;
+    color: #41a2e7;
+    font-weight: bolder;
+    line-height: 2px;
+    padding-left: 10px;
+
+}
+
+
+/* .inputInsc:hover{
+    border: 2px solid #fff;
+    font-weight: bold;
+} */
+
+
+.buttonInsc button{
+    margin-left: 50px;
+    /* padding-bottom: 10px; */
+  width: 88%;
+ height: 70px;
+    /* height: 35px; */
+    background-color: #1775b8;
+    border: 2px solid #0e5f9a;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+.buttonInsc button:hover {
+    background: #ffffff;
+    transition: aLL .4s ease-in;
+   border: 2px solid #41a2e7;
+    color:#41a2e7;
+    border: 2px solid #0e5f9a;
+}
+
+
+/* *{
+
+    background-color: #fff;
+}  */
+
+
+
+
+
+
+
+ /* .barre {
+background: #444;
+width: 99px;
+height: 5px;
+border-radius:2px;
+margin: 0 auto;
+
+
+}  */
