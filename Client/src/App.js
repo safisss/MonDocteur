@@ -207,11 +207,7 @@ function App() {
             <Route path="/card" component={Card} />
             <Route path="/CalendarUser/:doctorId" component={CalendarUser} />
             <Route path="/header" component={Header} />
-            <AdminRoute
-              exact
-              path="/dashboardAdmin"
-              component={DashboardAdmin}
-            />
+      
             <AdminRoute
               exact
               path="/dashboardAdmin"

@@ -17,7 +17,7 @@ const About = () => {
             eux, directement en ligne via la plateforme.{" "}
           </p>
           <p className="DescriptionSite">
-            {" "}
+          
             <Link to="#">Mon Docteur</Link> Vous permet de centraliser les
             différents rendez-vous auprès des praticiens que vous avez sollicité
             par le biais de notre annuaire.

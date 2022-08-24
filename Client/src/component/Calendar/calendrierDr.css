@@ -69,3 +69,19 @@ font-family: roboto;
     float: right;
     width:1220px;
 }
+
+
+
+.fc-event, .fc-event-dot {
+    background-color: #ffc107;
+
+}
+
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: .85em;
+    line-height: 1.4;
+    border-radius: 3px;
+    border: 1px solid #ffc107;
+}

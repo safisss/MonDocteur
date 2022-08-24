@@ -29,7 +29,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Pédiatre</p>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>ORL</p>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Médecin généraliste</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Sage femme</p>
             </div>
           </div>
 
@@ -77,7 +77,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Dermatologue et vénérologue</p>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Gynécologue médicale et obstétrique</p>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ const Profil = () => {
               className="GalleryPhotos"
             />
             <div className="descGallery">
-              <p>Neurologue</p>
+              <p>Dentiste</p>
             </div>
           </div>
         </div>

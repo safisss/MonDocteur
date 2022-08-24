@@ -16,7 +16,6 @@ const DashboardUtilisateur = () => {
         notre priorité.
       </h1>
 
- 
     </div>
   );
 };

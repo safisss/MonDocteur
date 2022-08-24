@@ -48,6 +48,7 @@ const AuthentificationDoctor = () => {
         localStorage.setItem("docToken", res.data.token);
         localStorage.setItem("isDoctor", res.data.isDoctor);
         localStorage.setItem("isActivated", res.data.verify);
+        localStorage.setItem("doctorId", res.data.doctorId);
         history.push("/homeDoctor");
       })
       .catch((err) => {
@@ -55,6 +56,7 @@ const AuthentificationDoctor = () => {
         if (err.response.data.notVerified) {
           setErrorVerified(err.response.data.message);
         }
+        setErrorVerified(err.response.data.message);
       });
   };
 

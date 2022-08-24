@@ -46,12 +46,17 @@ const ProfileUser = () => {
       {show ? (
         <div className="ContactUserLine">
           <p className="Renseignements">Vos renseignements </p>
-          <p className="modifprofileUser"> {profile.Nom} </p>
-          <p className="modifprofileUser"> {profile.Prenom}</p>
-          <p className="modifprofileUser"> {profile.Datedenaissance}</p>
-          <p className="modifprofileUser"> {profile.Adresse}</p>
-          <p className="modifprofileUser"> {profile.NTelephone}</p>
-          <p className="modifprofileUser"> {profile.Email}</p>
+          <p className="modifprofileUser"> Nom : {profile.Nom} </p>
+          <p className="modifprofileUser"> Prenom : {profile.Prenom}</p>
+          <p className="modifprofileUser">
+            Datedenaissance : {profile.Datedenaissance}
+          </p>
+          <p className="modifprofileUser"> Adresse : {profile.Adresse}</p>
+          <p className="modifprofileUser">
+            {" "}
+            Numéro de téléphone : {profile.NTelephone}
+          </p>
+          <p className="modifprofileUser"> Email : {profile.Email}</p>
           {/* <h2> {profile.Motdepasse}</h2> */}
           <button
             className="btnEditUser"

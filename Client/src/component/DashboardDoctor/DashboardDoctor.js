@@ -1,14 +1,17 @@
 import React from "react";
 import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import "./dashboardDoctor.css";
-
+import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+
 const DashboardDoctor = () => {
+  const token = localStorage.getItem("docToken");
   const history = useHistory();
   const [logout, setLogout] = useState(false);
-
+  const [rdvNbr, setRdvNbr] = useState([]);
+  // console.log(rdvNbr);
   const logoutHandler = async (e) => {
     e.preventDefault();
     // await localStorage.removeItem("auth");
@@ -19,7 +22,21 @@ const DashboardDoctor = () => {
     history.push("/");
   };
 
-
+  useEffect(() => {
+    axios
+      .get("/Doctors/messages", {
+        headers: {
+          jwt: token,
+        },
+      })
+      .then((res) => {
+        setRdvNbr(res.data.messages);
+        // console.log(res);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }, [rdvNbr]);
 
   return (
     <div>
@@ -64,7 +81,8 @@ const DashboardDoctor = () => {
               </span>
               <span className="titleDoctor"></span>
               <Link to="/rdvDoctors" style={{ textDecoration: "none" }}>
-                Mes Rendez-vous
+                Mes Rendez-vous{" "}
+                {/* <span style={{ color: "white" }}> {rdvNbr.length} </span> */}
               </Link>
             </li>
 
@@ -94,7 +112,7 @@ const DashboardDoctor = () => {
               </span>
               <span className="titleDoctor"></span>
               <Link
-                to="/" 
+                to="/"
                 style={{ textDecoration: "none" }}
                 onClick={logoutHandler}
               >

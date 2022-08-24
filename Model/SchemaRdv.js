@@ -1,9 +1,11 @@
-
 const mongoose = require("mongoose");
 const Joi = require("joi").extend(require("@joi/date"));
 
-
 const SchemaRdv = new mongoose.Schema({
+  Name: {
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -11,23 +13,15 @@ const SchemaRdv = new mongoose.Schema({
   start: {
     type: Date,
     required: true,
-  }, 
+  },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "UserSchema",
     required: true,
   },
   doctorId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "SchemaDoc",
     required: true,
   },
 });
 
-
-const rdv = mongoose.model("RdvModel", SchemaRdv);
-
-module.exports = {
-  
-  rdv,
-};
+module.exports = rdv = mongoose.model("RdvModel", SchemaRdv);

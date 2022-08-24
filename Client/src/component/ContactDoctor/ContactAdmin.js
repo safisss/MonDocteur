@@ -3,6 +3,7 @@ import './contactDoctor.css';
 import DashboardDoctor from '../DashboardDoctor/DashboardDoctor';
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import swal from "sweetalert";
 
 const ContactAdmin = () => {
   const [messages, setMessages] = useState([
@@ -13,6 +14,8 @@ const ContactAdmin = () => {
       VotreMessage: "",
     },
   ]);
+
+const [show, setShow] = useState(false);
 
   const form = useRef();
 
@@ -28,13 +31,21 @@ const ContactAdmin = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          if (result) {
+            swal("Sent!", "", "success")
+              .then(() => {
+                setShow(true);
+              })
+              .catch((err) => console.log(err));
+            setMessages([{}]);
+          }
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
+
 
   return (
     <div>

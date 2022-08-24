@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { SchemaDoc } = require("../Model/SchemaDoctor");
-const {rdv} = require ("../Model/SchemaRdv");
+const rdv = require("../Model/SchemaRdv");
 const {
   User,
   RegistrationValidator,
@@ -85,57 +85,39 @@ router.post("/InscriptionUser", (req, res) => {
 //Login User :
 
 router.post("/Login", async (req, res) => {
-  const { Email, Motdepasse } = req.body;
-
-  await User.findOne({ Email })
-
-    .then((user) => {
-      if (user) {
-        bcrypt.compare(Motdepasse, user.Motdepasse, (err, comp) => {
-          if (err) {
-            return res.status(400).json({ status: false, message: err });
-          } else if (comp) {
-            jwt.sign(
-              { user },
-              process.env.privateKey,
-              { expiresIn: "10h" },
-              (err, token) => {
-                if (err) {
-                  return res.status(200).json({ status: false, message: err });
-                } else if (token) {
-                  return res.status(200).json({
-                    status: true,
-                    message: "Success to login",
-                    token,
-                    data: user,
-                  });
-                } else if (token) {
-                  return res.status(200).json({
-                    status: true,
-                    message: "You can't acess to login",
-                  });
-                } else {
-                  return res.status(200).json({ status: false, message: err });
-                }
-              }
-            );
-          } else if (user === null) {
-            return res
-              .status(400)
-              .json({ status: true, message: "Invalid Password" });
-          }
-        });
-      } else {
-        return res
-          .status(404)
-          .json({ status: true, message: "Email not existed" });
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      // console.log(err.stack);
-      res.status(500).json({ status: false, message: err });
+  try {
+    const { Email, Motdepasse } = req.body;
+    // console.log(Email);
+    const user = await User.findOne({ Email });
+    if (!user) {
+      return res.status(404).json({
+        status: true,
+        message:
+          "Profile not found, invalid password or email, please check again",
+      });
+    }
+    let comparedPassword = await bcrypt.compare(Motdepasse, user.Motdepasse);
+    if (!comparedPassword) {
+      return res.status(400).json({
+        status: false,
+        message:
+          "Profile not found, invalid password or email, please check again",
+      });
+    }
+    const token = await jwt.sign({ user }, process.env.privateKey, {
+      expiresIn: "48h",
     });
+    res.status(200).json({
+      status: true,
+      message: "Success to login",
+      token,
+      isUser: user.Role,
+      userId: user._id,
+    });
+  } catch (error) {
+    if (error) throw error;
+    res.status(400).json({ status: false, error });
+  }
 });
 
 //Edit Profile User : + Verify Token
@@ -308,7 +290,7 @@ router.post("/ContactAdmin", async (req, res) => {
 ///CONTACT DOCTOR : /Users/message/send
 router.post("/message/:doctorId", isAuth, async (req, res) => {
   try {
-    const { phoneNumber, message } = req.body;
+    const { phoneNumber, message, date } = req.body;
     const user = req.user;
     const { doctorId } = req.params;
     // console.log(doctorId);
@@ -323,6 +305,7 @@ router.post("/message/:doctorId", isAuth, async (req, res) => {
             userPrenom: user.Prenom,
             phoneNumber,
             email: user.Email,
+            date,
           },
         },
       },
@@ -338,22 +321,22 @@ router.post("/message/:doctorId", isAuth, async (req, res) => {
 });
 
 ///CONTACT DOCTOR : calender
-router.post("/calender", isAuth, async (req, res) => {
+router.post("/calender/:doctorId", isAuth, async (req, res) => {
   try {
-    const { start, doctorId } = req.body;
+    const { start, title } = req.body;
+    let { doctorId } = req.params;
     const user = req.user;
-   
+
     // console.log(req.body);
     const newCalender = await rdv.create(
-      
-           {
+      {
+        userId: user._id,
+        doctorId,
+        Name: `${user.Nom} ${user.Prenom}`,
+        title,
+        start,
+      },
 
-           userId:user._id,
-           doctorId,
-            title:`${user.Nom} ${user.Prenom}`,
-            start,
-        },
-      
       { new: true }
     );
     console.log(newCalender);
@@ -367,26 +350,19 @@ router.post("/calender", isAuth, async (req, res) => {
 
 //user get calender doctor
 
-
-router.get("/calenderOfDoc/:id", isAuth, async (req, res) => {
+router.get("/calenderOfDoc/:id", async (req, res) => {
   try {
-    let { doctorId } = req.doctor;
-console.log(doctorId);
-    const messages = await rdv.find({ doctorId: doctorId });
+    let { id } = req.params;
+    const doctorCalender = await rdv.find({ doctorId: id });
     // .populate(
     //   "Messages.userId",
     //   "Nom Prenom -_id"
     // );
-    res.status(200).json({ status: true, messages: messages });
+    res.status(200).json({ status: true, data: doctorCalender });
   } catch (error) {
     if (error) throw error;
     res.status(400).json({ status: false, error });
   }
 });
-
-
-  
-
-
 
 module.exports = router;

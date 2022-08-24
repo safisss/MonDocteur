@@ -4,6 +4,8 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
+import swal from "sweetalert";
+
 const Contact = () => {
 
 
@@ -15,6 +17,8 @@ const [messages, setMessages] = useState([
     VotreMessage: "",
   },
 ]);
+
+const [show, setShow] = useState(false);
 
 const form = useRef();
 
@@ -30,13 +34,21 @@ const sendEmail = (e) => {
     )
     .then(
       (result) => {
-        console.log(result.text);
+        if (result) {
+          swal("Sent!", "", "success")
+            .then(() => {
+              setShow(true);
+            })
+            .catch((err) => console.log(err));
+          setMessages([{}]);
+        }
       },
       (error) => {
         console.log(error.text);
       }
     );
 };
+
 
 
 

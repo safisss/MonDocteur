@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 
 //import ValidationLogin from "../../../../Validation/ValidationLogin";
 //const { SchemaDoc } = require("../Model/SchemaDoctor");
@@ -64,7 +65,8 @@ export const login = (user, history) => async (dispatch, payload) => {
       alert(result.data.msg);
     }
   } catch (error) {
-    console.log(error);
+    console.dir(error);
+    dispatch({ type: "LOGIN_ERROR", payload: error.response.data.message });
   }
 };
 

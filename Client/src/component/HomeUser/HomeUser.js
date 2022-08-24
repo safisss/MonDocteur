@@ -44,14 +44,14 @@ const HomeUser = () => {
   };
   const doctors = useSelector((state) => state.ReducerUser.AllDoctors);
 
-  // console.log(doctors);
+  console.log(doctors);
 
-  // var filtredDoctors = doctors.filter(
-  //   (el) =>
-  //     el.Gouvernorat.toLowerCase().includes(governorat.toLowerCase()) &&
-  //     el.Specialites.toLowerCase().includes(searchbySpec.toLowerCase()) &&
-  //     el.Nom.toLowerCase().includes(search.toLowerCase())
-  // );
+  var filtredDoctors = doctors.filter(
+    (el) =>
+      el.Gouvernorat.toLowerCase().includes(governorat.toLowerCase()) &&
+      el.Specialites.toLowerCase().includes(searchbySpec.toLowerCase()) &&
+      el.Nom.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <div>
       <DashboardUser />
@@ -169,62 +169,65 @@ const HomeUser = () => {
           //       : null
           //   )
 
-        doctors &&  doctors.map((doctor) => {
-            return (
-              <div className="bContainer">
-                <div className="cardsDoctors">
-                  <div className="imContent">
-                    <span className="overlay"></span>
-                    <div className="cardPho">
-                      <img
-                        className="Iphotos"
-                        src={`./uploads/${doctor.img}`}
-                        alt=""
-                      />
+          filtredDoctors &&
+            filtredDoctors.map((doctor) => {
+              return (
+                <div className="bContainer">
+                  <div className="cardsDoctors">
+                    <div className="imContent">
+                      <span className="overlay"></span>
+                      <div className="cardPho">
+                        <img
+                          className="Iphotos"
+                          src={`./uploads/${doctor.img}`}
+                          alt=""
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="cardContent">
-                    <Fragment key={doctor._id}>
-                      <h2 className="nameCard">{doctor.Nom}</h2>
-                      <p className="cardDescription">{doctor.Specialites}</p>
-                      <p className="cardDescription">{doctor.Gouvernorat}</p>
-                      <div style={{ textDecoration: "none", display: "flex" }}>
-                        <button
-                          className="btn1CardInfos"
-                          style={{ textDecoration: "none", width: "140px" }}
+                    <div className="cardContent">
+                      <Fragment key={doctor._id}>
+                        <h2 className="nameCard">{doctor.Nom}</h2>
+                        <p className="cardDescription">{doctor.Specialites}</p>
+                        <p className="cardDescription">{doctor.Gouvernorat}</p>
+                        <div
+                          style={{ textDecoration: "none", display: "flex" }}
                         >
-                          <Link
-                            to={`/calendarUser/${doctor._id}`}
+                          <button
+                            className="btn1CardInfos"
+                            style={{ textDecoration: "none", width: "140px" }}
+                          >
+                            <Link
+                              to={`/calendarUser/${doctor._id}`}
+                              style={{
+                                textDecoration: "none",
+                                color: "#287bff",
+                              }}
+                            >
+                              RDV
+                            </Link>
+                          </button>
+
+                          <button
+                            className="btn2CardInfos"
                             style={{
                               textDecoration: "none",
-                              color: "#287bff",
+                              width: "140px",
                             }}
                           >
-                            RDV
-                          </Link>
-                        </button>
-
-                        <button
-                          className="btn2CardInfos"
-                          style={{
-                            textDecoration: "none",
-                            width: "140px",
-                          }}
-                        >
-                          <Link
-                            to={`/homeUser/viewcard/${doctor.Nom}/${doctor._id}`}
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            Profil
-                          </Link>
-                        </button>
-                      </div>
-                    </Fragment>
+                            <Link
+                              to={`/homeUser/viewcard/${doctor.Nom}/${doctor._id}`}
+                              style={{ textDecoration: "none", color: "white" }}
+                            >
+                              Profil
+                            </Link>
+                          </button>
+                        </div>
+                      </Fragment>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })
+              );
+            })
         }
       </div>
 

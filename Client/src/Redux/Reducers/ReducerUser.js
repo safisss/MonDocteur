@@ -20,25 +20,25 @@ export const ReducerUser = (state = initialState, action) => {
 
   switch (type) {
     case REGISTER_USER:
-      console.log(payload.user, "Hiiiiiiiiiii reducer");
+      // console.log(payload.user, "Hiiiiiiiiiii reducer");
       return {
         ...state,
         user: payload.user,
         isAuth: false,
       };
+      break;
+    // case LOGIN_USER:
+    // localStorage.setItem("token", payload.token);
 
-    case LOGIN_USER:
-      // localStorage.setItem("token", payload.token);
+    // localStorage.setItem("_id", payload.user._id);
 
-      // localStorage.setItem("_id", payload.user._id);
-
-      return {
-        ...state,
-        user: payload.user,
-        isAuth: true,
-        role: payload.role,
-      };
-
+    // return {
+    //   ...state,
+    //   user: payload.user,
+    //   isAuth: true,
+    //   role: payload.role,
+    // };
+    // break;
     case LOGOUT_USER:
       localStorage.removeItem("token");
 
@@ -47,14 +47,14 @@ export const ReducerUser = (state = initialState, action) => {
         user: {},
         isAuth: false,
       };
-
+      break;
     case GET_List_All_Doctors:
       return {
         ...state,
         AllDoctors: payload,
         isAuth: true,
       };
-
+      break;
     case GET_PROFILE_USER:
       return {
         ...state,

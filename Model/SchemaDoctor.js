@@ -117,10 +117,14 @@ const SchemaDoctor = new mongoose.Schema(
           type: String,
           required: true,
         },
+        date: {
+          type: String,
+          required: true,
+        },
       },
     ],
-  Calender:[
-    {
+    Calender: [
+      {
         title: {
           type: String,
           required: true,
@@ -129,8 +133,8 @@ const SchemaDoctor = new mongoose.Schema(
           type: Date,
           required: true,
         },
-  },
-]
+      },
+    ],
   },
 
   { Timestamps: true } //TimesTamps : trace sur database : create + date par exemple

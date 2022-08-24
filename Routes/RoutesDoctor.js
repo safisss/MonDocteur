@@ -1,7 +1,8 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const doctorAuth = require("../middleware/doctorAuth");
-console.log(doctorAuth);
+const rdv = require("../Model/SchemaRdv");
+
 const router = express.Router();
 // const router = require("express").Router();
 const bcrypt = require("bcryptjs");
@@ -244,7 +245,7 @@ router.post("/Login", async (req, res) => {
     let checkPassword = await bcrypt.compare(Motdepasse, doctor.Motdepasse);
     console.log(checkPassword);
     if (!checkPassword) {
-      console.log("err");
+      // console.log("err");
       return res.status(402).json({
         status: false,
         message:
@@ -265,6 +266,7 @@ router.post("/Login", async (req, res) => {
       message: "Success to login",
       token,
       isDoctor: doctor.Role,
+      doctorId: doctor._id,
       verify: doctor.VerifyAccount,
     });
   } catch (error) {
@@ -503,11 +505,14 @@ router.get("/messages", doctorAuth, async (req, res) => {
   try {
     let { _id } = req.doctor;
 
-    const messages = await SchemaDoc.findById(_id).populate(
-      "Messages.userId",
-      "Nom Prenom -_id"
-    );
-    res.status(200).json({ status: true, messages: messages });
+    const user = await SchemaDoc.findById(_id);
+
+    // .populate(
+    //   "Messages.userId",
+    //   "Nom Prenom -_id"
+    // );
+    // console.log(user.Messages);
+    res.status(200).json({ status: true, messages: user.Messages });
   } catch (error) {
     if (error) throw error;
     res.status(400).json({ status: false, error });
@@ -518,18 +523,13 @@ router.get("/messages", doctorAuth, async (req, res) => {
 router.get("/calender", doctorAuth, async (req, res) => {
   try {
     let { _id } = req.doctor;
-
-    const messages = await SchemaDoc.findById(_id).populate(
-      "Messages.userId", 
-      "Nom Prenom -_id"
-    );
-    res.status(200).json({ status: true, messages: messages });
+    const calender = await rdv.find({ doctorId: _id });
+    // console.log(calender);
+    res.status(200).json({ status: true, calender });
   } catch (error) {
     if (error) throw error;
     res.status(400).json({ status: false, error });
   }
 });
-
-
 
 module.exports = router;

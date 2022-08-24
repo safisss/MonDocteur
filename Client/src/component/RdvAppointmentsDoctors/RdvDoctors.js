@@ -11,12 +11,14 @@ import InputGroup from "../ModalUsers/InputGroup";
 
 const RdvDoctors = () => {
   const [date, setDate] = useState();
-
   const handleChange = (e) => {
     setDate(e.target.value);
   };
+  // const token = localStorage.getItem("token");
 
-  const [docMessages, setDocMessages] = useState([]);
+  const [docMessages, setDocMessages] = useState();
+  // console.log(docMessages);
+
   // dispatch = useDispatch;
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
@@ -30,7 +32,6 @@ const RdvDoctors = () => {
     });
   };
 
-
   /* Get MESSAGES from PATIENT*/
   useEffect(() => {
     axios
@@ -40,16 +41,16 @@ const RdvDoctors = () => {
         },
       })
       .then((res) => {
-        setDocMessages(res.data.messages.Messages);
-        console.log(res.data.messages.Messages);
+        setDocMessages(res.data.messages);
+        // localStorage.setItem("rdv", docMessages.length);
+        // console.log(res.data.messages);
       })
       .catch((err) => {
         console.dir(err);
       });
-  }, []);
+  }, [docMessages]);
 
-
-  console.log("docMessages", docMessages);
+  // console.log("docMessages", docMessages);
 
   return (
     <div>
@@ -199,7 +200,7 @@ const RdvDoctors = () => {
                   </th> */}
 
                   <th className="TabH" scope="col">
-                    User Nom
+                    Date
                   </th>
                   <th className="TabH" scope="col">
                     User Prenom
@@ -229,19 +230,16 @@ const RdvDoctors = () => {
                 {docMessages &&
                   docMessages.map((message, index) => {
                     return (
-                      <>
-                        <tr className="TableTr">
-                          <th scope="row" className="TabH">
-                            {index + 1}
-                          </th>
-                          {/* <td className="TabV">{message.userId}</td> */}
-                          <td className="TabV">{message.userId.Nom}</td>
-                          <td className="TabV">{message.userId.Prenom}</td>
-                          <td className="TabV">{message.message}</td>
-                          <td className="TabV">{message.phoneNumber}</td>
-                          <td className="TabV">{message.email}</td>
-                        </tr>
-                      </>
+                      <tr className="TableTr">
+                        <th scope="row" className="TabH">
+                          {index + 1}
+                        </th>
+                        <td className="TabV">{message.date}</td>
+                        <td className="TabV">{message.userPrenom}</td>
+                        <td className="TabV">{message.message}</td>
+                        <td className="TabV">{message.phoneNumber}</td>
+                        <td className="TabV">{message.email}</td>
+                      </tr>
                     );
                   })}
               </tbody>

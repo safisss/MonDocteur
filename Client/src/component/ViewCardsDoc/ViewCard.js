@@ -42,16 +42,14 @@ const ViewCard = () => {
       <DashboardUser />
       {name && doctorId ? (
         <>
-          <div
-            className="bg-light"
-            style={{ paddingLeft: "250px"}}
-          >
+          <div className="bg-light" style={{ paddingLeft: "250px" }}>
             <div className="container" style={{ paddingTop: "90px" }}>
               <div className="row d-flex justify-content-center">
                 <div className="col-md-10 mt-5 pt-5">
                   <div className="row z-depth-3">
-                    <div className="col-sm-4 bg-info rounded-left" >
-                      <div className="card-block text-center text-white"
+                    <div className="col-sm-4 bg-info rounded-left">
+                      <div
+                        className="card-block text-center text-white"
                         style={{ backgroundColor: "#287bff" }}
                       >
                         <i class="fas fa-user-tie fa-7x mt-5"></i>
@@ -153,6 +151,18 @@ const ViewCard = () => {
                                 placeholder="e.g 1235656789"
                                 autoFocus
                                 name="phoneNumber"
+                              />
+                            </Form.Group>
+                            <Form.Group
+                              className="mb-3"
+                              controlId="exampleForm.ControlInput1"
+                            >
+                              <Form.Label>Select Date</Form.Label>
+                              <Form.Control
+                                type="date"
+                                placeholder="e.g 01/01/2022"
+                                autoFocus
+                                name="date"
                               />
                             </Form.Group>
                             <Form.Group

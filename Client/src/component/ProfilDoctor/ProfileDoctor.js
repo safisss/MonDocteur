@@ -38,28 +38,41 @@ const handleSubmit = async (e) => {
      })
      .then((res) => setProfile(res.data.profile))
      .catch((err) => console.log(err));
- }, [profile, show]);
-
+ }, [profile, show, token]);
+//  }, [profile, show]);
   return (
     <div>
       <DashboardDoctor />
       {show ? (
         <div className="formulaireDoctor">
           <h2 className="RenseignementsDoc">Vos renseignements </h2>
-          <p className="modifprofileUser"> {profile.Nom} </p>
-          <p className="modifprofileUser"> {profile.Prenom}</p>
-          <p className="modifprofileUser"> {profile.AdresseProfessionnelle}</p>
-          <p className="modifprofileUser"> {profile.Numerodetelephone}</p>
-          <p className="modifprofileUser"> {profile.Sexe}</p>
-          <p className="modifprofileUser"> {profile.Datedenaissance}</p>
-          <p className="modifprofileUser"> {profile.Email}</p>
-          <p className="modifprofileUser"> {profile.Gouvernorat}</p>
+          <p className="modifprofileUser"> Nom : {profile.Nom} </p>
+          <p className="modifprofileUser"> Prenom : {profile.Prenom}</p>
           <p className="modifprofileUser">
+            Adresse Professionnelle : {profile.AdresseProfessionnelle}
+          </p>
+          <p className="modifprofileUser">
+            Numero de téléphone : {profile.Numerodetelephone}
+          </p>
+          <p className="modifprofileUser">{profile.Sexe}</p>
+          <p className="modifprofileUser">
+            Date de naissance : {profile.Datedenaissance}
+          </p>
+          <p className="modifprofileUser"> Email : {profile.Email}</p>
+          <p className="modifprofileUser">
+            Gouvernorat : {profile.Gouvernorat}
+          </p>
+          <p className="modifprofileUser">
+            Numero d'inscription à l'ordre des medecins :
             {profile.Numerodinscriptionalordredesmedecins}
           </p>
-          <p className="modifprofileUser"> {profile.Specialites}</p>
-          <p className="modifprofileUser"> {profile.NomCabinet}</p>
-          <p> {profile.NfixduCabinet}</p>
+          <p className="modifprofileUser">
+            Specialités : {profile.Specialites}
+          </p>
+          <p className="modifprofileUser">
+            Nom du Cabinet : {profile.NomCabinet}
+          </p>
+          <p>Numéro fix du Cabinet : {profile.NfixduCabinet}</p>
           <button
             className="btnEditUser"
             onClick={() => {

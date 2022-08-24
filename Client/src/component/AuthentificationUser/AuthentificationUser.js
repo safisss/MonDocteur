@@ -1,47 +1,43 @@
 import React from "react";
-
+import Alert from "react-bootstrap/Alert";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { login } from "../../Redux/Actions/Users";
 import "./authentificationUser.css";
-
 import NavBar from "../NavBar/NavBar";
 import { Link, useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-
+import swal from "sweetalert";
 const AuthentificationUser = () => {
   const [user, setUser] = useState({});
+  const [errorMsg, setErrorMsg] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
   const [userLogin, setUserLogin] = useState();
-
-
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-
-  
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    // await axios
-    //   .post("http://localhost:5000/Users/Login", { user })
-    //   .then((response) => {
-    // setUserLogin(response.user);
-    await dispatch(login(user, history));
-
-    //console.log(res);
-    // });
-    // history.push(`/DashboardUser/${}`);
+    // await dispatch(login(user, history));
+    axios
+      .post("/Users/Login", user)
+      .then((result) => {
+        console.log(result);
+        localStorage.setItem("token", result.data.token);
+        localStorage.setItem("isUser", result.data.isUser);
+        localStorage.setItem("userId", result.data.userId);
+        swal("Welcome", "", "success").then(() => {
+          history.push(`/DashboardUtilisateur`);
+        });
+      })
+      .catch((error) => {
+        setErrorMsg(error.response.data.message);
+        // console.dir(error.response.data.mesage);
+      });
   };
-
-  //  useEffect(async () => {
-     //await axios.get("http://localhost:5000/Admin/UsersList").then((res) => {
-
-  //  });
-
 
   return (
     <div>
@@ -49,6 +45,11 @@ const AuthentificationUser = () => {
         <NavBar />
         <form id="login-form">
           <h1>Se connecter : Patient</h1>
+          {errorMsg && (
+            <Alert key="danger" variant="danger">
+              {errorMsg}
+            </Alert>
+          )}
           <div className="inputAuth">
             <input
               type="text"
@@ -69,10 +70,6 @@ const AuthentificationUser = () => {
             />
           </div>
 
-          {/* <label>
-        <input type="checkbox" name="remember"/> Remember me
-      </label> */}
-          {/* <button type="submit" className="LoginBtn" onClick=(){history.push("/dashboardUser");} > */}
           <button className="LoginBtn" onClick={handleLogin}>
             Connexion
           </button>

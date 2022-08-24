@@ -28,6 +28,7 @@ const CalendarDoc = () => {
   const doctors = useSelector((state) => state.ReducerUser.AllDoctors);
   // const profile = doctors.find((elt) => elt.Nom.includes(name));
   const token = localStorage.getItem("token");
+  const [arg, setArg] = useState("");
 
   const handleChange = (e) => {
     setUserCalendar({
@@ -42,7 +43,7 @@ const CalendarDoc = () => {
   /* POST/ADD Rdv from Doctor */
   const handleSave = (e) => {
     axios
-      .post(`/Users/calender`, userCalendar, {
+      .post(`/Users/calender/${doctorId}`, userCalendar, {
         headers: {
           jwt: token,
         },
@@ -52,41 +53,22 @@ const CalendarDoc = () => {
     handleClose();
   };
 
-  /* Get MESSAGES from PATIENT*/
+  /* Get calendar from PATIENT*/
 
- 
-
-
-  const handleCalendar = (e) => {
+  const calendarComponentRef = React.createRef();
+  const [calendarEvents, setCalendarEvents] = useState([]);
+  useEffect(() => {
     axios
-      .get(`/Users/calendarOfDoc/${doctorId}`, doctorId, {
-        headers: {
-          jwt: token,
-        },
-      })
+      .get(`/Users/calenderOfDoc/${doctorId}`)
       .then((res) => {
-        setDocCalendar(res.data.data);
-        console.log(res.data.data);
+        if (res.data.data) {
+          setCalendarEvents(res.data.data);
+        }
       })
       .catch((err) => {
         console.dir(err);
       });
-  };
-
-
- useEffect(async () => {
-  handleCalendar()
-  
- }, []);
- console.log(docCalendar);
-
-
-  const calendarComponentRef = React.createRef();
-  const [calendarEvents, setCalendarEvents] = useState([
-    { title: "Event Now", start: new Date() },
-  ]);
-
-  const [arg, setArg] = useState("");
+  }, [calendarEvents]);
 
   const handleDateClick = (arg) => {
     // console.log(arg.date.toString().substr(16,16).substr(0,2));
@@ -131,24 +113,15 @@ const CalendarDoc = () => {
               handleChange(e);
             }}
           >
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                type="tel"
-                placeholder="e.g 1235656789"
-                autoFocus
-                name="phoneNumber"
-              />
-            </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>Your Message</Form.Label>
+              <Form.Label>Title</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
-                name="message"
+                name="title"
                 placeholder="write your message here"
               />
             </Form.Group>

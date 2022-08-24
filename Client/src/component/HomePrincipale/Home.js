@@ -4,7 +4,7 @@ import "./homePrincipale.css"
 import { Link } from "react-router-dom";
 
 const Home = () => {
-
+ 
   return (
     <div className="homePrincipaleHome">
       <div className="ContainerHomeP">
@@ -13,7 +13,7 @@ const Home = () => {
 
           <h4 className="homeinfor">Mon Docteur</h4>
           <p className="homeDescrip">
-            Le site de prise de{" "}
+            Le site de prise de
             <span>Rendez-vous</span> avec Les
             profesionnels de santé.
           </p>
